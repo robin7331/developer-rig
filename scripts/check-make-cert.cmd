@@ -13,5 +13,9 @@ IF "%HAS_ALL_FILES%" == "YES" (
 	powershell -Command "& {Get-ChildItem -Path Cert:\LocalMachine\Root}" | FIND "Twitch Developer Rig CA" > NUL
 	IF NOT ERRORLEVEL 1 EXIT /B 0
 )
+
+REM If there is an argument, the invoker wants to know if certificate
+REM installation is required regardless of elevation.
+IF NOT "%~1" == "" EXIT /B 1
 net file > NUL 2> NUL
 EXIT /B

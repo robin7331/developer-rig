@@ -1,10 +1,6 @@
 @ECHO OFF
 SETLOCAL
 
-REM Configure the temporary directory.
-SET T=%TEMP%\rig%RANDOM%
-MD "%T%"
-
 REM Collect command line parameters.
 :loop
 IF "%~1" == "" GOTO end
@@ -17,7 +13,7 @@ IF "%~1" == "-m" (
 ) ELSE (
 	GOTO usage
 )
-IF ERRORLEVEL 1 GOTO done
+IF ERRORLEVEL 1 EXIT /B
 SHIFT /1
 SHIFT /1
 GOTO loop
@@ -27,12 +23,19 @@ REM Check for elevation and invoke configuration appropriately.
 CALL "%~dp0check-configure.cmd"
 IF ERRORLEVEL 1 (
 	CALL "%~dp0configure.cmd"
-	ECHO When configuration completes,
-	PAUSE
+	IF NOT ERRORLEVEL 1 (
+		ECHO When configuration completes,
+		PAUSE
+	)
 ) ELSE (
 	CALL "%~dp0configure.cmd" -
 )
-PATH %PATH%;%SystemDrive%\Python27;%ProgramFiles%\nodejs;%ProgramFiles(x86)%\Yarn\bin;%ProgramFiles%\Git\cmd
+IF NOT ERRORLEVEL 1 CALL :path_and_check
+IF ERRORLEVEL 1 (
+	ECHO Configuration did not complete properly.  You will need to correct the
+	ECHO problems and re-run this script.
+	EXIT /B
+)
 
 REM Provide defaults in case of no arguments.
 SET PARENT=%~dp0..\..
@@ -76,23 +79,23 @@ IF "%BACKEND_FILE%" == "" (
 )
 START "%MANIFEST_FILE%" CMD /C yarn start -l "%MANIFEST_FILE%"
 ECHO Opened %NWINDOWS% other command prompt%S% to run the developer rig.
-
-:done
-SET EXIT_CODE=%ERRORLEVEL%
-RD /Q /S "%T%"
-EXIT /B %EXIT_CODE%
+EXIT /B
 
 :usage
 ECHO.
 ECHO usage: %0 [-m manifest-file] [-f front-end-directory] [-b back-end-file]
 ECHO.
 ECHO Specify no command line arguments to use defaults for all of them.
-GOTO done
+EXIT /B
 
 :collect
 IF EXIST "%~2" (
 	SET %1=%~f2
 ) ELSE (
 	ECHO Cannot open %~3 "%~2".
-	"%T%\fail" 2> NUL
+	"%~dp0false" 2> NUL
 )
+
+:path_and_check
+PATH %PATH%;%SystemDrive%\Python27;%ProgramFiles%\nodejs;%ProgramFiles(x86)%\Yarn\bin;%ProgramFiles%\Git\cmd
+CALL "%~dp0check-configure.cmd" -
