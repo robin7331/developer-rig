@@ -27,7 +27,8 @@ $(dirname $0)/configure - || exit 1
 
 # Collect command line parameters or provide defaults.
 D=$(getfullpath $(dirname $0)/..)
-P=$(getfullpath $D/..)
+P=$(getfullpath "$D"/..)
+
 if [ $# -eq 0 ]; then
 	MANIFEST_FILE="$P/panel.json"
 	FRONTEND_DIRECTORY="$P/my-extension"
