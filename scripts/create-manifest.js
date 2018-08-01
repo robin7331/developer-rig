@@ -15,7 +15,7 @@ const options = [
   { name: "base_uri", alias: "b", type: String, defaultValue: "https://localhost.rig.twitch.tv:8080", description: "testing base URI of extension assets" },
   { name: "author_name", alias: "a", type: String, defaultValue: "twitchrig", description: "extension author name" },
   { name: "support_email", alias: "e", type: String, defaultValue: "support@localhost", description: "extension support email" },
-  { name: "name", alias: "n", type: String, defaultValue: `Extension ${now}`, description: "extension name" },
+  { name: "name", alias: "n", type: String, defaultValue: `Hello World Panel Extension`, description: "extension name" },
   { name: "description", alias: "d", type: String, defaultValue: `Description of extension ${now}.`, description: "extension description" },
   { name: "summary", alias: "m", type: String, defaultValue: `Summary of extension ${now}.`, description: "extension summary" },
   { name: "output_file", alias: "o", type: String, defaultValue: stdout, description: "output file path" },
