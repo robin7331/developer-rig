@@ -3,7 +3,6 @@ import { RigConfigurationsDialog } from './component';
 
 describe('<RigConfigurationsDialog />', () => {
   const setupShallow = setupShallowTest(RigConfigurationsDialog, () => ({
-    show: true,
     config: {},
     closeConfigurationsHandler: jest.fn(),
     refreshConfigurationsHandler: jest.fn()
@@ -14,12 +13,6 @@ describe('<RigConfigurationsDialog />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should be null if show is false', () => {
-    const { wrapper } = setupShallow({
-      show: false,
-    });
-    expect(wrapper.type()).toBe(null);
-  })
   it('expect no config', () => {
     const { wrapper } = setupShallow();
     expect(wrapper.find('.rig-configurations-view__content').text().trim()).toBe('{}');

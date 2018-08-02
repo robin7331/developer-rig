@@ -8,7 +8,6 @@ ShallowWrapper {
     closeConfigurationsHandler={[Function]}
     config={Object {}}
     refreshConfigurationsHandler={[Function]}
-    show={true}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

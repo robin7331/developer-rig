@@ -98,7 +98,6 @@ export class RigComponent extends React.Component<Props, State> {
   public openConfigurationsHandler = () => {
     this.setState({
       showConfigurations: true,
-      selectedView: Configurations
     });
   }
 
@@ -224,12 +223,13 @@ export class RigComponent extends React.Component<Props, State> {
   public createExtensionView = () => {
     const extensionViews = this.getExtensionViews();
     const linked = this.refs.extensionViewDialog.state.identityOption === IdentityOptions.Linked;
+    const nextExtensionViewId = extensionViews.reduce((a: number, b: RigExtensionView) => Math.max(a, parseInt(b.id, 10)), 0) + 1;
     extensionViews.push({
-      id: (extensionViews.length + 1).toString(),
+      id: nextExtensionViewId.toString(),
       type: this.refs.extensionViewDialog.state.extensionViewType,
       extension: createExtensionObject(
         this.state.manifest,
-        (extensionViews.length + 1).toString(),
+        nextExtensionViewId.toString(),
         this.refs.extensionViewDialog.state.viewerType,
         linked,
         this.state.userName,
@@ -290,11 +290,10 @@ export class RigComponent extends React.Component<Props, State> {
             closeHandler={this.closeEditViewHandler}
             saveViewHandler={this.editViewHandler}
           />}
-        <RigConfigurationsDialog
-          show={this.state.showConfigurations}
+        {this.state.showConfigurations && <RigConfigurationsDialog
           config={this.state.manifest}
           closeConfigurationsHandler={this.closeConfigurationsHandler}
-          refreshConfigurationsHandler={this.refreshConfigurationsHandler} />
+          refreshConfigurationsHandler={this.refreshConfigurationsHandler} />}
         {!this.props.session &&
           <SignInDialog
             show={this.state.showSignInDialog}
@@ -354,13 +353,13 @@ export class RigComponent extends React.Component<Props, State> {
 
   private initLocalStorage() {
     const extensionViewsValue = localStorage.getItem("extensionViews");
-    if (!extensionViewsValue) {
+    if (extensionViewsValue) {
+      const extensionViews = JSON.parse(extensionViewsValue);
+      extensionViews.forEach((view: RigExtensionView, index: number) => view.id = (index + 1).toString());
+      this.setState({ extensionViews });
+    } else {
       localStorage.setItem("extensionViews", JSON.stringify([]));
-      return;
     }
-    this.setState({
-      extensionViews: JSON.parse(extensionViewsValue)
-    })
   }
 
   private setLogin() {

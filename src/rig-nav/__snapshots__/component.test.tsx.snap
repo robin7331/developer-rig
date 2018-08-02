@@ -89,6 +89,18 @@ ShallowWrapper {
 >
           <Connect(MockApiDropdownComponent) />
           <div
+                    className="personal-bar__configurations"
+                    onClick={[Function]}
+                    title="Configurations"
+          >
+                    <img
+                              alt="Configurations"
+                              height={24}
+                              src="gear.svg"
+                              width={24}
+                    />
+          </div>
+          <div
                     className="personal-bar__ext-name"
           >
                     <span>
@@ -134,12 +146,6 @@ ShallowWrapper {
                     className="top-nav-item"
                     onClick={[Function]}
           >
-                    Configurations
-          </a>
-          <a
-                    className="top-nav-item"
-                    onClick={[Function]}
-          >
                     Manage Bits Products
           </a>
 </div>,
@@ -155,6 +161,18 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Connect(MockApiDropdownComponent) />,
+            <div
+              className="personal-bar__configurations"
+              onClick={[Function]}
+              title="Configurations"
+>
+              <img
+                            alt="Configurations"
+                            height={24}
+                            src="gear.svg"
+                            width={24}
+              />
+</div>,
             <div
               className="personal-bar__ext-name"
 >
@@ -188,6 +206,38 @@ ShallowWrapper {
             "ref": null,
             "rendered": null,
             "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt="Configurations"
+                height={24}
+                src="gear.svg"
+                width={24}
+/>,
+              "className": "personal-bar__configurations",
+              "onClick": [Function],
+              "title": "Configurations",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Configurations",
+                "height": 24,
+                "src": "gear.svg",
+                "width": 24,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -278,12 +328,6 @@ ShallowWrapper {
               className="top-nav-item"
               onClick={[Function]}
 >
-              Configurations
-</a>,
-            <a
-              className="top-nav-item"
-              onClick={[Function]}
->
               Manage Bits Products
 </a>,
           ],
@@ -335,19 +379,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Configurations",
-              "className": "top-nav-item",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Configurations",
-            "type": "a",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
               "children": "Manage Bits Products",
               "className": "top-nav-item",
               "onClick": [Function],
@@ -373,6 +404,18 @@ ShallowWrapper {
             className="personal-bar"
 >
             <Connect(MockApiDropdownComponent) />
+            <div
+                        className="personal-bar__configurations"
+                        onClick={[Function]}
+                        title="Configurations"
+            >
+                        <img
+                                    alt="Configurations"
+                                    height={24}
+                                    src="gear.svg"
+                                    width={24}
+                        />
+            </div>
             <div
                         className="personal-bar__ext-name"
             >
@@ -419,12 +462,6 @@ ShallowWrapper {
                         className="top-nav-item"
                         onClick={[Function]}
             >
-                        Configurations
-            </a>
-            <a
-                        className="top-nav-item"
-                        onClick={[Function]}
-            >
                         Manage Bits Products
             </a>
 </div>,
@@ -440,6 +477,18 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Connect(MockApiDropdownComponent) />,
+              <div
+                className="personal-bar__configurations"
+                onClick={[Function]}
+                title="Configurations"
+>
+                <img
+                                alt="Configurations"
+                                height={24}
+                                src="gear.svg"
+                                width={24}
+                />
+</div>,
               <div
                 className="personal-bar__ext-name"
 >
@@ -473,6 +522,38 @@ ShallowWrapper {
               "ref": null,
               "rendered": null,
               "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="Configurations"
+                  height={24}
+                  src="gear.svg"
+                  width={24}
+/>,
+                "className": "personal-bar__configurations",
+                "onClick": [Function],
+                "title": "Configurations",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Configurations",
+                  "height": 24,
+                  "src": "gear.svg",
+                  "width": 24,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -563,12 +644,6 @@ ShallowWrapper {
                 className="top-nav-item"
                 onClick={[Function]}
 >
-                Configurations
-</a>,
-              <a
-                className="top-nav-item"
-                onClick={[Function]}
->
                 Manage Bits Products
 </a>,
             ],
@@ -613,19 +688,6 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Live Config",
-              "type": "a",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Configurations",
-                "className": "top-nav-item",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Configurations",
               "type": "a",
             },
             Object {

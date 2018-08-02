@@ -39,12 +39,6 @@ ShallowWrapper {
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
-          <RigConfigurationsDialog
-                    closeConfigurationsHandler={[Function]}
-                    config={Object {}}
-                    refreshConfigurationsHandler={[Function]}
-                    show={false}
-          />
           <SignInDialog
                     closeSignInDialog={[Function]}
                     show={true}
@@ -89,12 +83,7 @@ ShallowWrapper {
 />,
             false,
             false,
-            <RigConfigurationsDialog
-              closeConfigurationsHandler={[Function]}
-              config={Object {}}
-              refreshConfigurationsHandler={[Function]}
-              show={false}
-/>,
+            false,
             <SignInDialog
               closeSignInDialog={[Function]}
               show={true}
@@ -122,20 +111,7 @@ ShallowWrapper {
           },
           false,
           false,
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "closeConfigurationsHandler": [Function],
-              "config": Object {},
-              "refreshConfigurationsHandler": [Function],
-              "show": false,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          false,
           Object {
             "instance": null,
             "key": undefined,
@@ -188,12 +164,6 @@ ShallowWrapper {
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
-            <RigConfigurationsDialog
-                        closeConfigurationsHandler={[Function]}
-                        config={Object {}}
-                        refreshConfigurationsHandler={[Function]}
-                        show={false}
-            />
             <SignInDialog
                         closeSignInDialog={[Function]}
                         show={true}
@@ -238,12 +208,7 @@ ShallowWrapper {
 />,
               false,
               false,
-              <RigConfigurationsDialog
-                closeConfigurationsHandler={[Function]}
-                config={Object {}}
-                refreshConfigurationsHandler={[Function]}
-                show={false}
-/>,
+              false,
               <SignInDialog
                 closeSignInDialog={[Function]}
                 show={true}
@@ -271,20 +236,7 @@ ShallowWrapper {
             },
             false,
             false,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "closeConfigurationsHandler": [Function],
-                "config": Object {},
-                "refreshConfigurationsHandler": [Function],
-                "show": false,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+            false,
             Object {
               "instance": null,
               "key": undefined,
@@ -414,12 +366,6 @@ ShallowWrapper {
                     openEditViewHandler={[Function]}
                     openExtensionViewHandler={[Function]}
           />
-          <RigConfigurationsDialog
-                    closeConfigurationsHandler={[Function]}
-                    config={Object {}}
-                    refreshConfigurationsHandler={[Function]}
-                    show={false}
-          />
           <SignInDialog
                     closeSignInDialog={[Function]}
                     show={true}
@@ -516,12 +462,7 @@ ShallowWrapper {
 />,
             false,
             false,
-            <RigConfigurationsDialog
-              closeConfigurationsHandler={[Function]}
-              config={Object {}}
-              refreshConfigurationsHandler={[Function]}
-              show={false}
-/>,
+            false,
             <SignInDialog
               closeSignInDialog={[Function]}
               show={true}
@@ -599,20 +540,7 @@ ShallowWrapper {
           },
           false,
           false,
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "closeConfigurationsHandler": [Function],
-              "config": Object {},
-              "refreshConfigurationsHandler": [Function],
-              "show": false,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          false,
           Object {
             "instance": null,
             "key": undefined,
@@ -717,12 +645,6 @@ ShallowWrapper {
                         openEditViewHandler={[Function]}
                         openExtensionViewHandler={[Function]}
             />
-            <RigConfigurationsDialog
-                        closeConfigurationsHandler={[Function]}
-                        config={Object {}}
-                        refreshConfigurationsHandler={[Function]}
-                        show={false}
-            />
             <SignInDialog
                         closeSignInDialog={[Function]}
                         show={true}
@@ -819,12 +741,7 @@ ShallowWrapper {
 />,
               false,
               false,
-              <RigConfigurationsDialog
-                closeConfigurationsHandler={[Function]}
-                config={Object {}}
-                refreshConfigurationsHandler={[Function]}
-                show={false}
-/>,
+              false,
               <SignInDialog
                 closeSignInDialog={[Function]}
                 show={true}
@@ -902,20 +819,7 @@ ShallowWrapper {
             },
             false,
             false,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "closeConfigurationsHandler": [Function],
-                "config": Object {},
-                "refreshConfigurationsHandler": [Function],
-                "show": false,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+            false,
             Object {
               "instance": null,
               "key": undefined,

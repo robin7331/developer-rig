@@ -7,6 +7,7 @@ import { UserSession } from '../core/models/user-session';
 import { ExtensionManifest } from '../core/models/manifest';
 import './component.sass';
 import { MockApiDropdown } from './mock-api-dropdown';
+import * as gear from '../img/gear.svg';
 
 export interface PublicProps {
   openProductManagementHandler: Function,
@@ -27,10 +28,6 @@ export interface ReduxStateProps {
 type Props = PublicProps & ReduxStateProps;
 
 export class RigNavComponent extends React.Component<Props> {
-  private openConfigurationsHandler = (): void => {
-    this.props.openConfigurationsHandler();
-  }
-
   private openProductManagementHandler = (): void => {
     const { session, manifest, openProductManagementHandler } = this.props;
     if ((session && session.login) && (manifest && manifest.bits_enabled)) {
@@ -56,11 +53,6 @@ export class RigNavComponent extends React.Component<Props> {
       'top-nav-item__selected': selectedView === LiveConfig,
     });
 
-    const configurationsClass = classNames({
-      'top-nav-item': true,
-      'top-nav-item__selected': selectedView === Configurations,
-    });
-
     const productManagementClass = classNames({
       'top-nav-item': true,
       'top-nav-item__selected': selectedView === ProductManagement,
@@ -78,6 +70,9 @@ export class RigNavComponent extends React.Component<Props> {
         <div className='top-nav'>
           <div className='personal-bar'>
             <MockApiDropdown />
+            <div className='personal-bar__configurations' onClick={(event) => this.props.openConfigurationsHandler()} title='Configurations'>
+              <img src={gear} width={24} height={24} alt='Configurations' />
+            </div>
             {manifest && <div className='personal-bar__ext-name'>
               <span>{manifest.name}</span>
             </div>}
@@ -94,9 +89,6 @@ export class RigNavComponent extends React.Component<Props> {
             </a>
             <a className={liveConfigClass} onClick={(event) => this.props.liveConfigHandler()}>
               Live Config
-            </a>
-            <a className={configurationsClass} onClick={(event) => this.openConfigurationsHandler()}>
-              Configurations
             </a>
             <a className={productManagementClass} onClick={(event) => this.openProductManagementHandler()}>
               Manage Bits Products

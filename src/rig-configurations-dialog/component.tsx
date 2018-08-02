@@ -3,7 +3,6 @@ import * as closeButton from '../img/close_icon.png';
 import './component.sass';
 
 interface RigConfigurationsDialogProps {
-  show: boolean;
   config: object;
   closeConfigurationsHandler: () => void;
   refreshConfigurationsHandler: () => void;
@@ -11,10 +10,6 @@ interface RigConfigurationsDialogProps {
 
 export class RigConfigurationsDialog extends React.Component<RigConfigurationsDialogProps> {
   public render() {
-    if (!this.props.show) {
-      return null;
-    }
-
     return (
       <div className="rig-configurations-view">
         <div className="rig-configurations-view__background"/>
